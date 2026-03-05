@@ -1,0 +1,175 @@
+!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Wish to Hitler</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Arizonia&family=Hind+Siliguri:wght@400&display=swap" rel="stylesheet">
+    <style>
+        body, html {
+            margin: 0; padding: 0;
+            width: 100%; height: 100%;
+            overflow: hidden;
+            background-color: black;
+            color: white;
+            display: flex;
+            justify-content: center; align-items: center;
+        }
+
+        /* Screen 1: Neon Style */
+        #neon-screen {
+            display: flex; flex-direction: column;
+            justify-content: center; align-items: center;
+            text-align: center; width: 100%; height: 100%;
+            transition: opacity 1.2s ease-in-out;
+            position: absolute;
+            z-index: 50; /* উঁচুতে রাখা হয়েছে */
+        }
+
+        #neon-screen h1 {
+            font-family: 'Arizonia', cursive;
+            font-size: 3.5rem;
+            color: #fff;
+            text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 40px #ffffff;
+            animation: neon-glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes neon-glow {
+            from { opacity: 1; text-shadow: 0 0 10px #fff, 0 0 20px #fff; }
+            to { opacity: 0.7; text-shadow: 0 0 5px #fff, 0 0 15px #ffffff; }
+        }
+
+        #envelope-icon {
+            font-size: 5rem; cursor: pointer; margin-top: 20px;
+            filter: drop-shadow(0 0 15px white);
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        /* Screen 2: Aesthetic Letter */
+        #letter-screen {
+            display: none; flex-direction: column;
+            justify-content: center; align-items: center;
+            width: 100%; height: 100%;
+            background: radial-gradient(circle, #1a1a1a, #000);
+            position: relative; opacity: 0;
+            transition: opacity 2s ease-in-out;
+            z-index: 10; /* মূল চিঠি নিচে থাকবে */
+        }
+
+        #letter-content {
+            width: 85%; max-width: 450px;
+            background: #fdfaf1; /* Old paper color */
+            padding: 30px; border-radius: 8px;
+            color: #2c1e1a;
+            box-shadow: 0 0 30px rgba(255,255,255,0.2);
+            overflow-y: auto;
+            max-height: 80vh;
+            line-height: 1.6;
+            font-family: 'Hind Siliguri', sans-serif; /* Bengali font */
+            font-size: 1.1rem;
+            border: 2px solid #e0c58a;
+            text-align: center;
+        }
+
+        .bengali-text {
+            display: block;
+            margin-bottom: 20px;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        .signature {
+            display: block;
+            text-align: right;
+            font-size: 1.2rem;
+            margin-top: 25px;
+            font-family: 'Dancing Script', cursive;
+            color: #b33939;
+            font-weight: bold;
+        }
+
+        /* Floating Elements */
+        .heart {
+            position: absolute; pointer-events: none;
+            animation: float 5s linear forwards;
+            z-index: 100; /* এটি চিঠির ওপরে ভাসবে */
+        }
+
+        @keyframes float {
+            0% { transform: translateY(100vh) scale(0.5); opacity: 1; }
+            100% { transform: translateY(-10vh) scale(1.2); opacity: 0; }
+        }
+
+        #neon-screen.hidden { opacity: 0; pointer-events: none; }
+        #letter-screen.active { display: flex; opacity: 1; }
+    </style>
+</head>
+<body>
+
+    <div id="neon-screen">
+        <h1>Happy Birthday Hitler 💌</h1>
+        <div id="envelope-icon" onclick="startExperience()">💌</div>
+        <p style="color: #bbb; font-family: sans-serif; letter-spacing: 2px; font-size: 0.8rem; margin-top: 15px;">CLICK TO OPEN YOUR HEART</p>
+    </div>
+
+    <div id="letter-screen">
+        <div id="letter-content">
+            <p style="font-family: 'Dancing Script', cursive; font-size: 1.8rem; color: #b33939;">Happy Birthday My Personal Hitler 😊</p>
+            
+            <span class="bengali-text">আজ কত বছরে পা দিলে তা আমার জানা নেই তবে দোয়া করি তুমি জীবনে সাকসেস হও...</span>
+            
+            <p style="font-weight: bold; letter-spacing: 1px; color: #d63031;">I LOVE YOU HITLER....</p>
+            
+            <span class="bengali-text">তোমার ভালোবাসা আমার কাছে কখনো মনে হয় ভিলেনের মতো যে আবার কখনো মনে হয় হিরোদের মতো। আমার জীবন যদি একটা গল্প হতো তবে সেই গল্পে তুমি হতে আমার হিরো আবার তুমি হতে আমার ভিলেন আর আমি সেই হিরো ও ভিলেন দুটোকেই ভালোবাসতাম....</span>
+            
+            <span class="bengali-text">দেখতে দেখতে তোমার আর আমার সম্পর্কের প্রায় ৫ মাস হয়ে গেলো। অনেক ঝামেলা হওয়ার পরেও তুমি কখনো আমাকে ভুল বুঝনি, কখনো আমার পাশ ছেড়ে যাওনি। তোমার করা প্রতিটা আচরণ আমার খুব ভালো লাগে—সেই আমার ঝুঁটি নিয়ে নেওয়া, আমাকে কলেজ টাইম দেওয়া—সব মনে আছে আমার। ঠিক একটা কাল্পনিক জগতের মতো...</span>
+            
+            <span class="bengali-text">অনেক ভালোবাসি তোমাকে নাহিদ... আমাদের পথচলা দীর্ঘ হোক, অনেক দোয়া রইলো তোমার জন্য। ইন শা আল্লাহ তুমি একদিন অনেক ভালো কিছু করবে, তোমার বাবা-মার মুখ উজ্জ্বল করবে....</span>
+            
+            <span class="signature">ইতি তোমার ফিহা 🌹</span>
+        </div>
+    </div>
+
+    <audio id="myAudio" loop>
+        <source src="forhitler.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        function startExperience() {
+            const audio = document.getElementById("myAudio");
+            
+            // Interaction fixed for browsers
+            audio.play().then(() => {
+                console.log("Playing music...");
+            }).catch(error => {
+                console.log("Audio play failed, checking file source.");
+            });
+
+            document.getElementById('neon-screen').classList.add('hidden');
+            
+            setTimeout(() => {
+                document.getElementById('letter-screen').classList.add('active');
+                setInterval(createAestheticElement, 400);
+            }, 1000);
+        }
+
+        function createAestheticElement() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            const items = ['❤️', '✨', '🌸', '💘', '🎂'];
+            heart.innerHTML = items[Math.floor(Math.random() * items.length)];
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.fontSize = (Math.random() * 10 + 20) + 'px';
+            heart.style.animationDuration = (Math.random() * 2 + 4) + 's';
+            document.body.appendChild(heart);
+            setTimeout(() => heart.remove(), 5000);
+        }
+    </script>
+</body>
+</html>
